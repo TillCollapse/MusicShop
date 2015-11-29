@@ -1,0 +1,28 @@
+
+#menutop li {
+    
+    display:inline-block;
+    border-top: solid 1px white;
+    margin-left:6%;
+    margin-right:8%;
+}
+
+
+#menutop li:hover{
+   /* border-top-width:5px;*/
+	cursor: pointer;
+	color: black;
+}
+#menutop ul {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+#menutop a{
+    text-decoration:none;
+    color: white;
+}
+#menutop a:hover{
+   cursor: pointer;
+   color: black;
+}

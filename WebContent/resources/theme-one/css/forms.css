@@ -1,0 +1,136 @@
+@CHARSET "UTF-8";
+html, body
+{
+	background: #98C1FF;
+    background-image: url("tlo.jpg");
+}
+#tytul
+{
+	background: linear-gradient(to bottom right, white ,black);
+	text-align: center;
+	width:100%;
+	height:10%;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+        border-radius: 20px ;
+        box-shadow: 5px 5px 10px;
+}
+h1
+{
+	font-size: 36px;
+	color: white;
+}
+label {
+	display: block;
+	width: 260px;
+	padding: 10px 20px;
+	color: #696969;
+	font-size: 16px;
+}	
+#loguj {
+	width: 450px; 
+	margin: 0 auto;
+	margin-top: 35px; 
+	padding: 0; 
+	background: #fff;
+	border: 1px solid silver;
+	font: 16px calibri;
+	letter-spacing: -1px;
+	padding: 15px 0 0 0;
+	-webkit-box-shadow: 0 0 2px silver; 
+        -moz-box-shadow: 0 0 2px silver; 
+        box-shadow: 0 0 2px silver;
+        border-top-left-radius: 20px;
+        border-top-right-radius:20px;
+        box-shadow: 5px 5px 10px;
+}
+#loguj input[type="text"],[type="password"],[type="email"],[type="placeholder"] 
+{
+	font-size: 22px;
+	display: block;
+	width: 360px; 
+	margin: 0 auto;
+	padding: 10px 5px;
+	border: 1px solid silver;
+	outline: 5px solid gold;
+	margin-bottom:15px;
+        box-shadow: 5px 5px 10px;
+}
+form {margin: 0;}
+
+#loguj input[type="text"]:focus,[type="password"]:focus,[type="email"]:focus {
+	outline: 5px solid grey;
+}
+#name{
+	margin-top:30px;
+}
+#lower {
+	background: grey;
+	width: 410px;
+	padding: 15px 20px;
+	margin-top: 20px;
+}
+
+
+.check {
+	display: inline;
+	float: none;
+	font-size: 15px;
+	padding: 10px;
+	color: #fff;
+}
+#buttonlogin[type="submit"] {
+	width: 90px;
+	padding: 5px 13px;
+	border: 1px solid #005f85;
+	color: white;
+	text-shadow: 0 0 1px black;
+	background: gold;
+	position: relative;
+	left: 170px;
+}
+#buttonlogin{
+	cursor:pointer;
+        box-shadow:5px 5px 10px 4px black;
+        
+}
+#buttonlogin:hover{
+    box-shadow: 0px 0px 60px 10px rgb(76, 92, 255);
+    transition: 1s;
+}
+#buttonlogin:active{
+    box-shadow: inset 5px 5px 10px black;
+    transition: 1s;
+}
+#buttonsign{
+	width: 373px;
+	padding: 5px 13px;
+	border: 1px solid #005f85;
+	color: white;
+	text-shadow: 0 0 1px black;
+	background: gold;
+	position: relative;
+	left:13.5px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:20px;
+        cursor:pointer;
+        box-shadow:5px 5px 10px 4px black;
+}
+#buttonsign:hover{
+        box-shadow: 0px 0px 60px 10px rgb(76, 92, 255);
+        transition: 1s;
+}
+#buttonsign:active{
+    box-shadow: inset 5px 5px 10px black;
+    transition: 1s;
+}
+span.errors
+{
+	color: red;
+	display: block;
+	width: 360px; 
+	margin: 0px auto 15px auto;
+}
+
+

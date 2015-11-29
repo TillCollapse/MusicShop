@@ -1,0 +1,125 @@
+html body
+{
+	background: #98C1FF;
+    background-image: url("tlo.jpg");
+}
+
+
+a:hover
+{
+	color: yellow;
+}
+#tytul
+{
+	background: linear-gradient(to bottom right, white ,black);
+	text-align: center;
+	width:100%;
+	height:10%;	
+	padding-top: 10px;
+	padding-bottom: 10px;
+        border-radius: 20px ;
+        box-shadow: 5px 5px 10px;
+}
+h1
+{
+	font-size: 36px;
+	color: white;
+}
+#panel
+{	
+	margin-left: 5%;
+	margin-right: 5%;
+}
+#naglowek {
+	background-color:silver;
+	padding: 20px;
+	margin-bottom: 20px;
+        box-shadow: 5px 5px 10px;
+        border-top-left-radius: 20px ;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius:120px;
+}
+#lewy {
+	float:left;
+	width:30%;
+	background: #242424;
+	margin-bottom: 50px;
+        min-height: 400px;
+        height:auto;
+        border-top-left-radius: 20px ;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius:120px;
+        box-shadow: 5px 5px 10px;
+
+}
+
+#prawy {
+	float:left;
+	width:65%;
+	min-height:400px;
+	margin-left: 5%;
+	background-color:#EEE;
+	margin-bottom: 50px;
+	height: auto;
+        border-top-left-radius: 20px ;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        box-shadow: 5px 5px 10px;
+}
+#pl {
+	float:left;
+	width:45%;
+	min-height:150px;
+	margin-left: 5%;
+	background-color:#EEE;
+	margin-bottom: 50px;
+	height: auto;
+        border-radius: 20px ;
+}
+#pp {
+	float:left;
+	width:45%;
+	min-height:150px;
+	margin-left: 5%;
+	background-color:#EEE;
+	margin-bottom: 50px;
+	height: auto;
+        border-radius: 20px ;
+}
+
+#stopka {
+	clear:both;
+}
+#log
+{
+	margin-bottom: 50px;
+	text-align: right;
+}
+label {
+	display: block;
+	width: 260px;
+	padding: 10px 20px;
+	color: #696969;
+	font-size: 16px;
+}	
+
+#a{
+    text-decoration:none;
+}
+#koszyk h4{
+    text-align: center;    
+}
+.link{
+    margin-left: 25px;
+    font-size: 30px;
+    color: #EEE; 
+    text-decoration: none ;
+}
+.link:visited { 
+   color: #699; 
+   text-decoration: none ;
+}
+.link:hover { 
+    color: #c93;
+    text-decoration: underline; 
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc
+    	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+        
+	
+	<!-- domyślnie już to powinno być. Zajmuje się JSR 303 validation -->
+	<mvc:annotation-driven />
+	
+	<mvc:resources mapping="/resources/**" location="/resources/theme-one/" />
+	
+	<!-- telling container to take care of annotations stuff -->
+ 	<context:annotation-config />
+	<!-- auto-scaning  -->
+	<context:component-scan base-package="pl.musicland" />
+	
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/view/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+		 <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
+		 <property name="url" value="jdbc:mysql://localhost:3306/sklep" />  
+		 <property name="username" value="root" />  
+		 <property name="password" value="" />  
+	</bean>  
+	 <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!-- Umożliwia odbieranie danych z wieloczęściowego formularza -->
+    <bean id="multipartResolver"
+    	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<!-- Maksymalny rozmiar w bajtach -->
+    	<property name="maxUploadSize" value="500000" />
+    </bean>
+    
+</beans>
