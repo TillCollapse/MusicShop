@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.RowMapper;
 
 import pl.musicland.model.Status;
 
-
 public class StatusRowMapper implements RowMapper<Status> {
 	public Status mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Status status = new Status();

@@ -17,5 +17,5 @@ public class NieAlbumyRowMapper implements RowMapper<Niealbumy> {
 		x.setNazwa_producenta(rs.getString("nazwa_producenta"));
 		return x;
 	}
-	
+
 }

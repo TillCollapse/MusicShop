@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import pl.musicland.model.ListaZakupow;
 
-public class ListaZakupowRowMapper implements RowMapper<ListaZakupow>{
+public class ListaZakupowRowMapper implements RowMapper<ListaZakupow> {
 	public ListaZakupow mapRow(ResultSet rs, int rowNum) throws SQLException {
 		ListaZakupow lista = new ListaZakupow();
 		lista.setListazakupowid(rs.getInt("listazakupowid"));

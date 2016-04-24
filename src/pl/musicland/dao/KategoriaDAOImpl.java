@@ -14,24 +14,24 @@ import pl.musicland.model.Kategoria;
 
 @Repository
 public class KategoriaDAOImpl implements KategoriaDAO {
-	
+
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
+
 	private Logger logger = Logger.getLogger(KategoriaDAOImpl.class);
-	
+
 	@Override
 	public List<Kategoria> getAllCat() {
 		String SQL = "select * from KATEGORIA";
-		List <Kategoria> cats = jdbcTemplate.query(SQL, new KatRowMapper());
-		return cats;			
+		List<Kategoria> cats = jdbcTemplate.query(SQL, new KatRowMapper());
+		return cats;
 	}
-	
+
 	@Override
 	public int addCat(String catname) {
-		
+
 		int isexist = isExist(catname);
-		if(isexist == 0) {
+		if (isexist == 0) {
 			String SQL = "insert into kategoria(nazwa) values(?)";
 			Integer result;
 			try {
@@ -41,24 +41,23 @@ public class KategoriaDAOImpl implements KategoriaDAO {
 				logger.info("Nie udało się dodać nowej kategorii");
 				result = null;
 			}
-			if ( result == null ) {
+			if (result == null) {
 				return result = 0;
 			} else {
-				logger.info("Dodano nową kategorię do bazy");
+				logger.info("Dodawanie nowej kategorii przebiegło pomyślnie");
 				return getLastInsertId();
 			}
 		} else {
-			logger.info("Dodawanie nowej kategorii przebiegło pomyślnie");
 			return isexist;
 		}
 	}
 
 	@Override
 	public int isExist(String catname) {
-		
+
 		String SQL = "select kategoriaid from kategoria where nazwa= ?";
 		Integer result;
-		
+
 		try {
 			result = jdbcTemplate.queryForObject(SQL, Integer.class, catname.toUpperCase());
 		} catch (EmptyResultDataAccessException ex) {
@@ -66,16 +65,15 @@ public class KategoriaDAOImpl implements KategoriaDAO {
 			logger.info("Dana kategoria nie istnieje w bazie");
 			result = null;
 		}
-		
-		if ( result == null ) {
+
+		if (result == null) {
 			return result = 0;
 		} else {
 			logger.info("Dana kategoria istniej już w bazie, zwrócono jej id");
 			return result.intValue();
 		}
-		
-	}
 
+	}
 
 	@Override
 	public int getLastInsertId() {
@@ -88,14 +86,13 @@ public class KategoriaDAOImpl implements KategoriaDAO {
 			logger.info("Nie uzyskano LastInsertId");
 			result = null;
 		}
-		
-		if ( result == null ) {
+
+		if (result == null) {
 			return result = 0;
 		} else {
 			logger.info("Zwrócono id istniejącej kategorii");
 			return result.intValue();
 		}
 	}
-	
 
 }

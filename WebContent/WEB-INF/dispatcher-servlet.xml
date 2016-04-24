@@ -15,13 +15,20 @@
 	<!-- domyślnie już to powinno być. Zajmuje się JSR 303 validation -->
 	<mvc:annotation-driven />
 	
-	<mvc:resources mapping="/resources/**" location="/resources/theme-one/" />
+	<mvc:resources mapping="/resources/**" location="/resources/theme-two/" />
+	<mvc:resources location="file:///D:/Eclipse/miniatury/" mapping="/images/**" />
 	
 	<!-- telling container to take care of annotations stuff -->
  	<context:annotation-config />
 	<!-- auto-scaning  -->
 	<context:component-scan base-package="pl.musicland" />
 	
+	<!-- Umożliwia odbieranie danych z wieloczęściowego formularza -->
+    <bean id="multipartResolver"
+    	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<!-- Maksymalny rozmiar w bajtach -->
+    	<property name="maxUploadSize" value="500000" />
+    </bean> 
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
@@ -30,21 +37,5 @@
 		<property name="suffix">
 			<value>.jsp</value>
 		</property>
-	</bean>
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
-		 <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
-		 <property name="url" value="jdbc:mysql://localhost:3306/sklep" />  
-		 <property name="username" value="root" />  
-		 <property name="password" value="" />  
-	</bean>  
-	 <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"> 
-        <property name="dataSource" ref="dataSource" />
-    </bean>
-    <!-- Umożliwia odbieranie danych z wieloczęściowego formularza -->
-    <bean id="multipartResolver"
-    	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-    	<!-- Maksymalny rozmiar w bajtach -->
-    	<property name="maxUploadSize" value="500000" />
-    </bean>
-    
+	</bean>   
 </beans>

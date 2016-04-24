@@ -10,7 +10,7 @@ import pl.musicland.model.ListaZakupow;
 
 @Service
 public class ListaZakupowManagerImpl implements ListaZakupowManager {
-	
+
 	@Autowired
 	ListaZakupowDAO dao;
 

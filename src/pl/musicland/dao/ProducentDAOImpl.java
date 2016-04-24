@@ -7,21 +7,19 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-
-
 @Repository
 public class ProducentDAOImpl implements ProducentDAO {
-	
+
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
+
 	private Logger logger = Logger.getLogger(ProducentDAOImpl.class);
-	
+
 	@Override
 	public int addProd(String prodname) {
-		
+
 		int isexist = isExist(prodname);
-		if(isexist == 0) {
+		if (isexist == 0) {
 			String SQL = "insert into producent(nazwa) values(?)";
 			Integer result;
 			try {
@@ -31,7 +29,7 @@ public class ProducentDAOImpl implements ProducentDAO {
 				logger.info("Nie udało się dodać nowego producenta");
 				result = null;
 			}
-			if ( result == null ) {
+			if (result == null) {
 				return result = 0;
 			} else {
 				logger.info("Dodawanie nowego producenta przebiegło pomyślnie");
@@ -44,10 +42,10 @@ public class ProducentDAOImpl implements ProducentDAO {
 
 	@Override
 	public int isExist(String prodname) {
-		
+
 		String SQL = "select producentid from producent where nazwa= ?";
 		Integer result;
-		
+
 		try {
 			result = jdbcTemplate.queryForObject(SQL, Integer.class, prodname.toUpperCase());
 		} catch (EmptyResultDataAccessException ex) {
@@ -55,16 +53,15 @@ public class ProducentDAOImpl implements ProducentDAO {
 			logger.info("Dany producent nie istnieje w bazie");
 			result = null;
 		}
-		
-		if ( result == null ) {
+
+		if (result == null) {
 			return result = 0;
 		} else {
 			logger.info("Dany producent istniej już w bazie, zwrócono jego id.");
 			return result.intValue();
 		}
-		
-	}
 
+	}
 
 	@Override
 	public int getLastInsertId() {
@@ -77,12 +74,23 @@ public class ProducentDAOImpl implements ProducentDAO {
 			logger.info("Nie uzyskano LastInsertId");
 			result = null;
 		}
-		
-		if ( result == null ) {
+
+		if (result == null) {
 			return result = 0;
 		} else {
 			logger.info("Zwrócono id nowo wprowadzonego producenta");
 			return result.intValue();
 		}
+	}
+
+	public String getProducentNameById(int id) {
+		String SQL = "select nazwa from producent where producentid=?";
+		String result = null;
+		try {
+			result = jdbcTemplate.queryForObject(SQL, String.class, id);
+		} catch (DataAccessException ex) {
+
+		}
+		return result;
 	}
 }

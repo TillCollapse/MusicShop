@@ -13,6 +13,8 @@ public class ProdRowMapper implements RowMapper<Produkt> {
 		prod.setProduktid(rs.getInt("produktid"));
 		prod.setNazwa(rs.getString("nazwa"));
 		prod.setKategoriaid(rs.getInt("kategoriaid"));
+		prod.setGatunekid(rs.getInt("gatunekid"));
+		prod.setAutorsid(rs.getInt("autorsid"));
 		prod.setProducentid(rs.getInt("producentid"));
 		prod.setIlosc(rs.getInt("ilosc"));
 		prod.setCena(rs.getFloat("cena"));
@@ -20,7 +22,5 @@ public class ProdRowMapper implements RowMapper<Produkt> {
 		prod.setZdjecie(rs.getString("zdjecie"));
 		return prod;
 	}
-	
+
 }
-
-

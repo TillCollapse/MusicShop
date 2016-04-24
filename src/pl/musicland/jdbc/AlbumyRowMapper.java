@@ -17,5 +17,5 @@ public class AlbumyRowMapper implements RowMapper<Albumy> {
 		album.setNazwa_gatunku(rs.getString("nazwa_gatunku"));
 		return album;
 	}
-	
+
 }

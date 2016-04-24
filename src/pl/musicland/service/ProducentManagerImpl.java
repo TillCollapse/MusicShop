@@ -7,13 +7,16 @@ import pl.musicland.dao.ProducentDAO;;
 
 @Service
 public class ProducentManagerImpl implements ProducentManager {
-	
+
 	@Autowired
 	ProducentDAO dao;
-	
+
 	@Override
 	public int addProd(String prodname) {
 		return dao.addProd(prodname);
 	}
-	
+
+	public String getProducentNameById(int id) {
+		return dao.getProducentNameById(id);
+	}
 }

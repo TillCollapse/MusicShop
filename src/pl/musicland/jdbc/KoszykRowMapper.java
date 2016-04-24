@@ -13,6 +13,7 @@ public class KoszykRowMapper implements RowMapper<Koszyk> {
 		koszyk.setKoszykid(rs.getInt("koszykid"));
 		koszyk.setStatusid(rs.getInt("statusid"));
 		koszyk.setUserid(rs.getInt("userid"));
+		koszyk.setData(rs.getTimestamp("data"));
 		return koszyk;
 	}
 }

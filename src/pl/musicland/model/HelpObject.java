@@ -1,6 +1,7 @@
 package pl.musicland.model;
 
 public class HelpObject {
+	int produktid;
 	String nazwa;
 	int ilosc;
 	float cena;
@@ -21,5 +22,11 @@ public class HelpObject {
 	}
 	public void setCena(float cena) {
 		this.cena = cena;
+	}
+	public int getProduktid() {
+		return produktid;
+	}
+	public void setProduktid(int produktid) {
+		this.produktid = produktid;
 	}
 }

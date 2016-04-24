@@ -19,14 +19,16 @@ public class NieAlbumyImpl implements NieAlbumyDAO {
 	@Override
 	public List<Niealbumy> getAllNieAlbumy() {
 		String SQL = "select * from niealbumy";
-		List <Niealbumy> albumy = jdbcTemplate.query(SQL, new NieAlbumyRowMapper());
-		return albumy;			
+		List<Niealbumy> albumy = jdbcTemplate.query(SQL, new NieAlbumyRowMapper());
+		return albumy;
 	}
+
 	public List<Map<String, Object>> getCatNames() {
 		String SQL = "select distinct nazwa_kategorii from niealbumy";
 		return jdbcTemplate.queryForList(SQL);
 	}
-	public List<Map<String,Object>> getGenreInCat() {
+
+	public List<Map<String, Object>> getGenreInCat() {
 		String SQL = "select distinct nazwa_producenta, producentid,kategoriaid,nazwa_kategorii from niealbumy";
 		return jdbcTemplate.queryForList(SQL);
 	}

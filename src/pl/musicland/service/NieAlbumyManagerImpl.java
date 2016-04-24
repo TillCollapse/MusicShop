@@ -10,8 +10,8 @@ import pl.musicland.model.Niealbumy;
 import pl.musicland.dao.NieAlbumyDAO;
 
 @Service
-public class NieAlbumyManagerImpl implements NieAlbumyManager{
-	
+public class NieAlbumyManagerImpl implements NieAlbumyManager {
+
 	@Autowired
 	NieAlbumyDAO dao;
 
@@ -19,9 +19,11 @@ public class NieAlbumyManagerImpl implements NieAlbumyManager{
 	public List<Niealbumy> getAllNieAlbumy() {
 		return dao.getAllNieAlbumy();
 	}
+
 	public List<Map<String, Object>> getCatNames() {
 		return dao.getCatNames();
 	}
+
 	public List<Map<String, Object>> getGenreInCat() {
 		return dao.getGenreInCat();
 	}

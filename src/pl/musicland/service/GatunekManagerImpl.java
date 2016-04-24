@@ -10,9 +10,10 @@ public class GatunekManagerImpl implements GatunekManager {
 
 	@Autowired
 	GatunekDAO dao;
+
 	@Override
 	public int addGat(String gatname) {
 		return dao.addGat(gatname);
 	}
-	
+
 }

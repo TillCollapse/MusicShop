@@ -9,11 +9,11 @@ import pl.musicland.dao.KategoriaDAO;
 import pl.musicland.model.Kategoria;
 
 @Service
-public class KatManagerImpl implements KatManager{
-	
+public class KatManagerImpl implements KatManager {
+
 	@Autowired
 	KategoriaDAO dao;
-	
+
 	@Override
 	public List<Kategoria> getAllCat() {
 		return dao.getAllCat();

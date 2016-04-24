@@ -11,11 +11,12 @@ public class UserRowMapper implements RowMapper<User> {
 		user.setId(rs.getInt("USERID"));
 		user.setImie(rs.getString("IMIE"));
 		user.setNazwisko(rs.getString("NAZWISKO"));
+		user.setEmail(rs.getString("EMAIL"));
 		user.setHaslo(rs.getString("HASLO"));
 		user.setMiasto(rs.getString("MIASTO"));
 		user.setKodpocztowy(rs.getString("KODPOCZTOWY"));
 		user.setAdres(rs.getString("ADRES"));
-		user.setCzyadmin(rs.getInt("czyadmin"));
+		user.setEnabled(rs.getInt("ENABLED"));
 		return user;
 	}
 

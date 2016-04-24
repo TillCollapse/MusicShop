@@ -1,9 +1,13 @@
 package pl.musicland.model;
 
+import java.sql.Timestamp;
+
 public class Koszyk {
 	private int koszykid;
-	private int statusid;
 	private int userid;
+	private int statusid;
+	private Timestamp data;
+	
 	public int getKoszykid() {
 		return koszykid;
 	}
@@ -21,5 +25,11 @@ public class Koszyk {
 	}
 	public void setUserid(int userid) {
 		this.userid = userid;
+	}
+	public Timestamp getData() {
+		return data;
+	}
+	public void setData(Timestamp data) {
+		this.data = data;
 	}
 }
