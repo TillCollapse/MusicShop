@@ -1,5 +1,5 @@
 # MusicShop
-Aplication created in other to know Spring Frameworok.
+Aplication created in order to know Spring Framework.
 Main capablities:
   - user registration 
   - authentication and autorization by Spring Sec
